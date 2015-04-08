@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    Matinict
+ * @package     Matinict_CustomerOrderCashPaid
+ * @copyright   Copyright (c) 2015 Abdul Matin (http://www.matinict.wordpress.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <modules>
+        <Matinict_CustomerOrderCancel>
+            <version>1.0.0.0</version>
+        </Matinict_CustomerOrderCancel>
+    </modules>
+    <global>
+        <helpers>
+            <customerordercancel>
+                <class>Matinict_CustomerOrderCancel_Helper</class>
+            </customerordercancel>
+        </helpers>
+    </global>
+    <adminhtml>
+        <translate>
+            <modules>
+                <Matinict_CustomerOrderCancel>
+                    <files>
+                        <default>Matinict_CustomerOrderCancel.csv</default>
+                    </files>
+                </Matinict_CustomerOrderCancel>
+            </modules>
+        </translate>
+    </adminhtml>
+    <frontend>
+        <routers>
+            <customerordercancel>
+                <use>standard</use>
+                <args>
+                    <module>Matinict_CustomerOrderCancel</module>
+                    <frontName>customerordercancel</frontName>
+                </args>
+            </customerordercancel>
+        </routers>
+        <layout>
+            <updates>
+                <customerordercancel>
+                    <file>customerordercancel.xml</file>
+                </customerordercancel>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Matinict_CustomerOrderCancel>
+                    <files>
+                        <default>Matinict_CustomerOrderCancel.csv</default>
+                    </files>
+                </Matinict_CustomerOrderCancel>
+            </modules>
+        </translate>
+    </frontend>
+    <default>
+        <sales>
+            <cancel>
+                <enabled>0</enabled>
+                <leadtime></leadtime>
+                <cancel_partially_shipped>0</cancel_partially_shipped>
+                <cancel_fully_shipped>0</cancel_fully_shipped>
+                <send_email>1</send_email>
+            </cancel>
+        </sales>
+    </default>
+</config>
